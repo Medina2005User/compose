@@ -1,0 +1,18 @@
+version: '3'
+services:
+  rng:
+    image: your_rng_image
+    networks:
+      - rng_network
+    # другие настройки вашего сервиса
+  
+  nginx:
+    image: nginx
+    networks:
+      - rng_network
+      - another_network
+    # другие настройки Nginx
+
+networks:
+  rng_network:
+  another_network:
