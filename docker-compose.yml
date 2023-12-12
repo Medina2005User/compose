@@ -16,3 +16,12 @@ services:
 networks:
   rng_network:
   another_network:
+  
+  nginx:
+    image: nginx
+    networks:
+      - rng_network
+      - another_network
+    volumes:
+      - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf:ro
+    # другие настройки Nginx
